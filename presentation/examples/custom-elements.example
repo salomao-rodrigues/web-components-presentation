@@ -1,0 +1,2 @@
+class UnicornArmy extends HTMLElement {...}
+window.customElements.define('unicorn-army', UnicornArmy);

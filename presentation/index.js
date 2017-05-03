@@ -3,6 +3,7 @@ import React from "react";
 
 // Import Spectacle Core tags
 import {
+  Appear,
   BlockQuote,
   CodePane,
   Cite,
@@ -61,8 +62,31 @@ export default function Presentation() {
           What is it
         </Heading>
         <Text margin="10px 0 0" textColor="primary" size={1}>
-          Set of APIs that allow you to create custom, reusable, encapsulated HTML tags to use in web pages and web apps.
+          Set of native APIs that allow you to create custom, reusable, encapsulated HTML tags to use in web pages and web apps.
         </Text>
+      </Slide>
+      <Slide transition={["fade"]} bgColor="tertiary">
+        <Heading size={2} textColor="secondary">
+          What can I do with it?
+        </Heading>
+      </Slide>
+      <Slide transition={["fade"]} bgColor="tertiary">
+        <Heading size={2} textColor="secondary">
+          <Text margin="10px 0 0" textColor="primary" size={1}>
+            { "An example with the <video> element" }
+              <video width="400" style={{ backgroundColor: "#000" }} controls />
+          </Text>
+        </Heading>
+      </Slide>
+      <Slide transition={["fade"]} bgColor="tertiary">
+        <Heading size={2} textColor="secondary">
+          How do I do this??
+        </Heading>
+        <Appear>
+          <Text margin="10px 0 0" textColor="primary" size={1}>
+            Use the API's, Luke!
+          </Text>
+        </Appear>
       </Slide>
       <Slide transition={["fade"]} bgColor="tertiary">
         <Heading size={2} textColor="secondary">
@@ -75,28 +99,34 @@ export default function Presentation() {
           <ListItem>Shadow DOM</ListItem>
         </List>
       </Slide>
-      <Slide transition={["zoom"]} bgColor="primary">
-        <Heading size={1} fit caps lineHeight={1} textColor="secondary">
-          Why?
+      <Slide transition={["fade"]} bgColor="tertiary">
+        <Heading size={2} textColor="secondary">
+          Create a template
         </Heading>
+        <CodePane lang="html" textSize="24px" source={ require("raw-loader!./examples/html-templates.example") } />
+      </Slide>
+      <Slide transition={["fade"]} bgColor="tertiary">
+        <Heading size={2} fit textColor="secondary">
+          Create your custom component
+        </Heading>
+        <CodePane lang="javascript" textSize="24px" source={ require("raw-loader!./examples/custom-elements.example") } />
+      </Slide>
+      <Slide transition={["fade"]} bgColor="tertiary">
+        <Heading size={2} fit textColor="secondary">
+          Make it use your template
+        </Heading>
+        <CodePane lang="javascript" textSize="22px" source={ require("raw-loader!./examples/use-the-template.example") } />
       </Slide>
       <Slide transition={["fade"]} bgColor="tertiary">
         <Heading size={2} textColor="secondary">
-          Custom Elements
+          Load it onto your web application
         </Heading>
-        <CodePane lang="javascript" source={ require("raw-loader!./examples/custom-component.example") } />
-      </Slide>
-      <Slide transition={["fade"]} bgColor="tertiary">
-        <Heading size={2} textColor="secondary">
-          HTML Templates
-        </Heading>
-        <CodePane lang="javascript" source={ require("raw-loader!./examples/html-templates.example") } />
+        <CodePane lang="html" textSize="24px" source={ require("raw-loader!./examples/how-to-use.example") } />
       </Slide>
       <Slide transition={["fade"]} bgColor="tertiary">
         <Heading size={2} textColor="secondary">
           HTML Imports
         </Heading>
-        <CodePane lang="javascript" source={ require("raw-loader!./examples/html-imports.example") } />
       </Slide>
       <Slide transition={["fade"]} bgColor="tertiary">
         <Heading size={2} textColor="secondary">

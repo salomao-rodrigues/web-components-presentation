@@ -1,0 +1,18 @@
+<template id="unicorn-army-template">
+  ...
+</template>
+
+<script>
+  class UnicornArmy extends HTMLElement {
+    constructor() {
+      super();
+
+      const template = document.querySelector('#unicorn-army-template');
+      const instance = template.content.cloneNode(true);
+
+      this.appendChild(instance);
+    }
+  }
+
+  window.customElements.define('unicorn-army', UnicornArmy);
+</script>
