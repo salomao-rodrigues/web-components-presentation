@@ -9,6 +9,7 @@ import {
   Cite,
   Deck,
   Heading,
+  Image,
   ListItem,
   List,
   Quote,
@@ -28,10 +29,8 @@ require("normalize.css");
 require("spectacle/lib/themes/default/index.css");
 
 const images = {
-  city: require("../assets/city.jpg"),
-  kat: require("../assets/kat.png"),
-  logo: require("../assets/formidable-logo.svg"),
-  markdown: require("../assets/markdown.png")
+  v0support: require("../assets/v0-support.png"),
+  v1support: require("../assets/v1-support.png")
 };
 
 preloader(images);
@@ -75,12 +74,10 @@ export default function Presentation() {
         </Heading>
       </Slide>
       <Slide transition={["fade"]} bgColor="tertiary">
-        <Heading size={2} textColor="secondary">
-          <Text margin="10px 0 0" textColor="primary" size={1}>
-            { "An example with the <video> element" }
-              <video width="400" style={{ backgroundColor: "#000" }} controls />
-          </Text>
+        <Heading size={2} textColor="secondary" fit>
+          { "An example with the <video> element" }
         </Heading>
+          <video width="600" style={{ backgroundColor: "#000" }} controls />
       </Slide>
       <Slide transition={["fade"]} bgColor="tertiary">
         <Heading size={2} textColor="secondary">
@@ -138,14 +135,48 @@ export default function Presentation() {
         </Appear>
       </Slide>
       <Slide transition={["fade"]} bgColor="tertiary">
-        <Heading size={2} textColor="secondary">
+        <Heading size={2} textColor="secondary" fit>
+          What have we got here?
+        </Heading>
+        <CodePane lang="html" textSize="24px" source={ require("raw-loader!./examples/the-leak.example") } />
+      </Slide>
+      <Slide transition={["fade"]} bgColor="tertiary">
+        <Heading size={2} textColor="secondary" fit>
           Shadow DOM
+        </Heading>
+        <List>
+          <Appear><ListItem>Provides encapsulation for CSS</ListItem></Appear>
+          <Appear><ListItem>Provides encapsulation for DOM</ListItem></Appear>
+          <Appear><ListItem>Must be attached to an existing element</ListItem></Appear>
+        </List>
+      </Slide>
+      <Slide transition={["fade"]} bgColor="tertiary">
+        <Heading size={2} textColor="secondary" fit>
+          { "Back to the <video> example" }
+        </Heading>
+          <video width="600" style={{ backgroundColor: "#000" }} controls />
+      </Slide>
+      <Slide transition={["fade"]} bgColor="tertiary">
+        <Heading size={2} textColor="secondary" fit>
+          Let's fix this then...
+        </Heading>
+        <CodePane lang="html" textSize="24px" source={ require("raw-loader!./examples/adding-shadow-root.example") } />
+      </Slide>
+      <Slide transition={["fade"]} bgColor="tertiary">
+        <Heading size={2} textColor="secondary" fit>
+          Cool, it works!
         </Heading>
         <Appear>
           <Text margin="10px 0 0" textColor="primary" size={1}>
-            Provides encapsulation for DOM and CSS
+            But... What about browser support?
           </Text>
         </Appear>
+      </Slide>
+      <Slide transition={["fade"]} bgColor="tertiary">
+          <Image src={images.v0support.replace("/", "")} width="100%" />
+      </Slide>
+      <Slide transition={["fade"]} bgColor="tertiary">
+          <Image src={images.v1support.replace("/", "")} width="100%" />
       </Slide>
     </Deck>
   );

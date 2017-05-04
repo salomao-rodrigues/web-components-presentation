@@ -1,14 +1,13 @@
 <html>
 <head>
   ...
-  <link rel="import" href="./simple-element.html">
+  <link rel="import" href="./unicorn-army.html">
 </head>
 <body>
   ...
   <unicorn-army>
     <style>
       * { background-color: papayawhip; }
-
       .the-army { display: inline-block; }
     </style>
     <div class="the-army">&#x1f984;&#x1f984;&#x1f984;&#x1f984;&#x1f984;&#x1f984;</div>
