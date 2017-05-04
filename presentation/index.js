@@ -30,7 +30,8 @@ require("spectacle/lib/themes/default/index.css");
 
 const images = {
   v0support: require("../assets/v0-support.png"),
-  v1support: require("../assets/v1-support.png")
+  v1support: require("../assets/v1-support.png"),
+  polyfillsupport: require("../assets/polyfill-support.png")
 };
 
 preloader(images);
@@ -173,10 +174,32 @@ export default function Presentation() {
         </Appear>
       </Slide>
       <Slide transition={["fade"]} bgColor="tertiary">
-          <Image src={images.v0support.replace("/", "")} width="100%" />
+        <Image src={images.v0support.replace("/", "")} width="100%" />
       </Slide>
       <Slide transition={["fade"]} bgColor="tertiary">
-          <Image src={images.v1support.replace("/", "")} width="100%" />
+        <Image src={images.v1support.replace("/", "")} width="100%" />
+      </Slide>
+      <Slide transition={["fade"]} bgColor="tertiary">
+        <Heading size={2} textColor="secondary" fit>
+          Polyfills to the rescue!
+        </Heading>
+        <Image src={images.polyfillsupport.replace("/", "")} width="100%" />
+      </Slide>
+      <Slide transition={["fade"]} bgColor="tertiary">
+        <Heading size={2} textColor="secondary" fit>
+          Some libraries ou there
+        </Heading>
+        <List>
+          <ListItem>Polymer</ListItem>
+          <ListItem>Skate.js</ListItem>
+          <ListItem>X-Tag</ListItem>
+          <ListItem>Slim.js</ListItem>
+        </List>
+      </Slide>
+      <Slide transition={["fade"]} bgColor="tertiary">
+        <Heading size={2} textColor="secondary" fit>
+          Thank you!
+        </Heading>
       </Slide>
     </Deck>
   );
