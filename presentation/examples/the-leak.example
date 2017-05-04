@@ -1,0 +1,17 @@
+<html>
+<head>
+  ...
+  <link rel="import" href="./simple-element.html">
+</head>
+<body>
+  ...
+  <unicorn-army>
+    <style>
+      * { background-color: papayawhip; }
+
+      .the-army { display: inline-block; }
+    </style>
+    <div class="the-army">&#x1f984;&#x1f984;&#x1f984;&#x1f984;&#x1f984;&#x1f984;</div>
+  </unicorn-army>
+</body>
+</html>

@@ -1,9 +1,9 @@
 <template>
   <style>
-    .the-army {
-      display: inline-block;
-      background-color: salmon;
-    }
+    * { background-color: papayawhip; }
+
+    .the-army { display: inline-block; }
   </style>
+
   <div class="the-army">&#x1f984;&#x1f984;&#x1f984;&#x1f984;&#x1f984;&#x1f984;</div>
 </template>

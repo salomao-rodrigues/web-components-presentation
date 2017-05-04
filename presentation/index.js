@@ -48,21 +48,25 @@ const theme = createTheme({
 
 export default function Presentation() {
   return (
-    <Deck transition={["zoom", "slide"]} transitionDuration={500} theme={theme}>
+    <Deck progress="pacman" transition={["zoom", "slide"]} transitionDuration={500} theme={theme}>
       <Slide transition={["zoom"]} bgColor="primary">
-        <Heading size={1} fit caps lineHeight={1} textColor="secondary">
-          Web Components
+        <Heading size={1} caps lineHeight={1} textColor="tertiary">
+          An introduction to Web Components
         </Heading>
-        <Text margin="10px 0 0" textColor="tertiary" size={1} fit bold>
-          Semantical Composition
-        </Text>
       </Slide>
       <Slide transition={["fade"]} bgColor="tertiary">
         <Heading size={2} textColor="secondary">
           What is it
         </Heading>
         <Text margin="10px 0 0" textColor="primary" size={1}>
-          Set of native APIs that allow you to create custom, reusable, encapsulated HTML tags to use in web pages and web apps.
+          <Appear>
+            <BlockQuote>
+              <Quote>
+                Set of native APIs that allow you to create custom, reusable, encapsulated HTML tags to use in web pages and web apps.
+              </Quote>
+              <Cite>Webcomponents.org</Cite>
+            </BlockQuote>
+          </Appear>
         </Text>
       </Slide>
       <Slide transition={["fade"]} bgColor="tertiary">
@@ -123,39 +127,25 @@ export default function Presentation() {
         </Heading>
         <CodePane lang="html" textSize="24px" source={ require("raw-loader!./examples/how-to-use.example") } />
       </Slide>
-      <Slide transition={["fade"]} bgColor="tertiary">
+      <Slide transition={["fade"]} bgColor="papayawhip">
         <Heading size={2} textColor="secondary">
-          HTML Imports
+          So you've just created your component and...
         </Heading>
+        <Appear>
+          <Text margin="10px 0 0" textColor="primary" size={1}>
+            OMG, the CSS is leaking!!
+          </Text>
+        </Appear>
       </Slide>
       <Slide transition={["fade"]} bgColor="tertiary">
         <Heading size={2} textColor="secondary">
           Shadow DOM
         </Heading>
-      </Slide>
-      <Slide transition={["fade"]} bgColor="tertiary">
-        <Heading size={6} textColor="primary" caps>Typography</Heading>
-        <Heading size={1} textColor="secondary">Heading 1</Heading>
-        <Heading size={2} textColor="secondary">Heading 2</Heading>
-        <Heading size={3} textColor="secondary">Heading 3</Heading>
-        <Heading size={4} textColor="secondary">Heading 4</Heading>
-        <Heading size={5} textColor="secondary">Heading 5</Heading>
-        <Text size={6} textColor="secondary">Standard text</Text>
-      </Slide>
-      <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-        <Heading size={6} textColor="secondary" caps>Standard List</Heading>
-        <List>
-          <ListItem>Item 1</ListItem>
-          <ListItem>Item 2</ListItem>
-          <ListItem>Item 3</ListItem>
-          <ListItem>Item 4</ListItem>
-        </List>
-      </Slide>
-      <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
-        <BlockQuote>
-          <Quote>Example Quote</Quote>
-          <Cite>Author</Cite>
-        </BlockQuote>
+        <Appear>
+          <Text margin="10px 0 0" textColor="primary" size={1}>
+            Provides encapsulation for DOM and CSS
+          </Text>
+        </Appear>
       </Slide>
     </Deck>
   );
