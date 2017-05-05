@@ -1,0 +1,7 @@
+<p>
+  We'll make use of the HTML template API
+  <ul>
+    <li>Defines a blueprint for the component</li>
+    <li>It is parsed but not rendered</li>
+  </ul>
+</p>

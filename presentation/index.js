@@ -75,12 +75,12 @@ export default function Presentation() {
           </BlockQuote>
         </Appear>
       </Slide>
-      <Slide transition={["fade"]} bgColor="tertiary">
+      <Slide transition={["fade"]} bgColor="tertiary" notes={ require("raw-loader!./notes/what-can-i-do.notes") }>
         <Heading size={2} textColor="quaternary" fit>
           What can I do with it?
         </Heading>
       </Slide>
-      <Slide transition={["fade"]} bgColor="tertiary">
+      <Slide transition={["fade"]} bgColor="tertiary" notes={ require("raw-loader!./notes/the-video-example.notes") } >
         <Heading size={2} textColor="quaternary" margin="0 0 36px" fit>
           { "An example with the <video> element" }
         </Heading>
@@ -96,7 +96,7 @@ export default function Presentation() {
           </Text>
         </Appear>
       </Slide>
-      <Slide transition={["fade"]} bgColor="tertiary" notes={ require("raw-loader!./notes/introduction.notes") }>
+      <Slide transition={["fade"]} bgColor="tertiary" notes={ require("raw-loader!./notes/specifications.notes") }>
         <Heading size={2} textColor="quaternary">
           Specifications
         </Heading>
@@ -107,13 +107,18 @@ export default function Presentation() {
           <ListItem>Shadow DOM</ListItem>
         </List>
       </Slide>
-      <Slide transition={["fade"]} bgColor="tertiary">
+      <Slide transition={["fade"]} bgColor="tertiary" notes={ require("raw-loader!./notes/get-started.notes") }>
+        <Heading size={2} textColor="quaternary">
+          Let's get started!
+        </Heading>
+      </Slide>
+      <Slide transition={["fade"]} bgColor="tertiary" notes={ require("raw-loader!./notes/create-template.notes") }>
         <Heading size={2} textColor="quaternary" margin="0 0 36px" fit>
           Create a template
         </Heading>
         <CodePane lang="html" textSize="24px" source={ require("raw-loader!./examples/html-templates.example") } />
       </Slide>
-      <Slide transition={["fade"]} bgColor="tertiary">
+      <Slide transition={["fade"]} bgColor="tertiary" notes={ require("raw-loader!./notes/create-custom-component.notes") }>
         <Heading size={2} textColor="quaternary" margin="0 0 36px" fit>
           Create your custom component
         </Heading>
@@ -147,7 +152,7 @@ export default function Presentation() {
         </Heading>
         <CodePane lang="html" textSize="16px" source={ require("raw-loader!./examples/the-leak.example") } />
       </Slide>
-      <Slide transition={["fade"]} bgColor="tertiary">
+      <Slide transition={["fade"]} bgColor="tertiary" notes={ require("raw-loader!./notes/shadow-dom.notes") }>
         <Heading size={2} textColor="quaternary">
           Shadow DOM
         </Heading>

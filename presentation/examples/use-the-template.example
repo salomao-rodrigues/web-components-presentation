@@ -9,7 +9,7 @@
       super();
 
       const template = guestDoc.querySelector('#unicorn-army-template');
-      const instance = template.content.cloneNode(true);
+      const instance = template.content.cloneNode();
 
       this.appendChild(instance);
     }

@@ -1,0 +1,7 @@
+<p>
+  By extending HTMLElement
+  <ul>
+    <li>Lyfecicle events (Element added to the dom, attribute was changed, removed from dom)</li>
+    <li>Attach event listeners (onClick, mouse hover...)</li>
+  </ul>
+</p>
