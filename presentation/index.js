@@ -29,59 +29,65 @@ require("normalize.css");
 require("spectacle/lib/themes/default/index.css");
 
 const images = {
-  v0support: require("../assets/v0-support.png"),
-  v1support: require("../assets/v1-support.png"),
+  htmlTemplatesSupport: require("../assets/html-templates-support.png"),
+  customElementsSupport: require("../assets/custom-elements-support.png"),
+  htmlImports: require("../assets/html-imports-support.png"),
+  shadowDom: require("../assets/shadow-dom-support.png"),
   polyfillsupport: require("../assets/polyfill-support.png")
 };
 
 preloader(images);
 
 const theme = createTheme({
-  primary: "white",
-  secondary: "#1F2022",
-  tertiary: "#03A9FC",
-  quartenary: "#CECECE"
+  primary: "#434444",
+  secondary: "#F7F0DD",
+  tertiary: "#F7F0DD",
+  quaternary: "#434444"
+  // primary: "white",
+  // quaternary: "#1F2022",
+  // tertiary: "#03A9FC",
+  // secondary: "#CECECE"
 }, {
   primary: "Montserrat",
-  secondary: "Helvetica"
+  secondary: "Montserrat",
+  tertiary: "Montserrat",
+  quaternary: "Montserrat"
 });
 
 export default function Presentation() {
   return (
-    <Deck progress="pacman" transition={["zoom", "slide"]} transitionDuration={500} theme={theme}>
-      <Slide transition={["zoom"]} bgColor="primary">
-        <Heading size={1} caps lineHeight={1} textColor="tertiary">
+    <Deck progress="pacman" transition={["fade"]} transitionDuration={500} theme={theme}>
+      <Slide transition={["zoom"]} bgColor="primary" notes={ require("raw-loader!./notes/introduction.notes") }>
+        <Heading size={3} caps lineHeight={1} textColor="secondary">
           An introduction to Web Components
         </Heading>
       </Slide>
-      <Slide transition={["fade"]} bgColor="tertiary">
-        <Heading size={2} textColor="secondary">
+      <Slide transition={["fade"]} bgColor="tertiary" notes={ require("raw-loader!./notes/what-is-it.notes") } >
+        <Heading size={2} textColor="quaternary">
           What is it
         </Heading>
-        <Text margin="10px 0 0" textColor="primary" size={1}>
-          <Appear>
-            <BlockQuote>
-              <Quote>
-                Set of native APIs that allow you to create custom, reusable, encapsulated HTML tags to use in web pages and web apps.
-              </Quote>
-              <Cite>Webcomponents.org</Cite>
-            </BlockQuote>
-          </Appear>
-        </Text>
+        <Appear>
+          <BlockQuote>
+            <Quote textColor="#43868A" textSize="32px">
+              Set of native APIs that allow you to create custom, reusable, encapsulated HTML tags to use in web pages and web apps.
+            </Quote>
+            <Cite textColor="#444">Webcomponents.org</Cite>
+          </BlockQuote>
+        </Appear>
       </Slide>
       <Slide transition={["fade"]} bgColor="tertiary">
-        <Heading size={2} textColor="secondary">
+        <Heading size={2} textColor="quaternary" fit>
           What can I do with it?
         </Heading>
       </Slide>
       <Slide transition={["fade"]} bgColor="tertiary">
-        <Heading size={2} textColor="secondary" fit>
+        <Heading size={2} textColor="quaternary" margin="0 0 36px" fit>
           { "An example with the <video> element" }
         </Heading>
           <video width="600" style={{ backgroundColor: "#000" }} controls />
       </Slide>
       <Slide transition={["fade"]} bgColor="tertiary">
-        <Heading size={2} textColor="secondary">
+        <Heading size={2} textColor="quaternary">
           How do I do this??
         </Heading>
         <Appear>
@@ -90,11 +96,11 @@ export default function Presentation() {
           </Text>
         </Appear>
       </Slide>
-      <Slide transition={["fade"]} bgColor="tertiary">
-        <Heading size={2} textColor="secondary">
+      <Slide transition={["fade"]} bgColor="tertiary" notes={ require("raw-loader!./notes/introduction.notes") }>
+        <Heading size={2} textColor="quaternary">
           Specifications
         </Heading>
-        <List>
+        <List textColor="quaternary">
           <ListItem>Custom Elements</ListItem>
           <ListItem>HTML Templates</ListItem>
           <ListItem>HTML Imports</ListItem>
@@ -102,69 +108,69 @@ export default function Presentation() {
         </List>
       </Slide>
       <Slide transition={["fade"]} bgColor="tertiary">
-        <Heading size={2} textColor="secondary">
+        <Heading size={2} textColor="quaternary" margin="0 0 36px" fit>
           Create a template
         </Heading>
         <CodePane lang="html" textSize="24px" source={ require("raw-loader!./examples/html-templates.example") } />
       </Slide>
       <Slide transition={["fade"]} bgColor="tertiary">
-        <Heading size={2} fit textColor="secondary">
+        <Heading size={2} textColor="quaternary" margin="0 0 36px" fit>
           Create your custom component
         </Heading>
         <CodePane lang="javascript" textSize="24px" source={ require("raw-loader!./examples/custom-elements.example") } />
       </Slide>
       <Slide transition={["fade"]} bgColor="tertiary">
-        <Heading size={2} fit textColor="secondary">
+        <Heading size={2} textColor="quaternary" margin="0 0 36px" fit>
           Make it use your template
         </Heading>
-        <CodePane lang="javascript" textSize="22px" source={ require("raw-loader!./examples/use-the-template.example") } />
+        <CodePane lang="javascript" textSize="16px" source={ require("raw-loader!./examples/use-the-template.example") } />
       </Slide>
       <Slide transition={["fade"]} bgColor="tertiary">
-        <Heading size={2} textColor="secondary">
+        <Heading size={2} textColor="quaternary" margin="0 0 36px" fit>
           Load it onto your web application
         </Heading>
         <CodePane lang="html" textSize="24px" source={ require("raw-loader!./examples/how-to-use.example") } />
       </Slide>
-      <Slide transition={["fade"]} bgColor="papayawhip">
-        <Heading size={2} textColor="secondary">
+      <Slide transition={["fade"]} bgColor="cornflowerblue">
+        <Heading size={4} textColor="quaternary" margin="0 0 36px">
           So you've just created your component and...
         </Heading>
         <Appear>
-          <Text margin="10px 0 0" textColor="primary" size={1}>
+          <Text margin="10px 0 0" textColor="tertiary">
             OMG, the CSS is leaking!!
           </Text>
         </Appear>
       </Slide>
       <Slide transition={["fade"]} bgColor="tertiary">
-        <Heading size={2} textColor="secondary" fit>
+        <Heading size={2} textColor="quaternary" margin="0 0 36px" fit>
           What have we got here?
         </Heading>
-        <CodePane lang="html" textSize="24px" source={ require("raw-loader!./examples/the-leak.example") } />
+        <CodePane lang="html" textSize="16px" source={ require("raw-loader!./examples/the-leak.example") } />
       </Slide>
       <Slide transition={["fade"]} bgColor="tertiary">
-        <Heading size={2} textColor="secondary" fit>
+        <Heading size={2} textColor="quaternary">
           Shadow DOM
         </Heading>
-        <List>
+        <List textColor="quaternary">
           <Appear><ListItem>Provides encapsulation for CSS</ListItem></Appear>
           <Appear><ListItem>Provides encapsulation for DOM</ListItem></Appear>
           <Appear><ListItem>Must be attached to an existing element</ListItem></Appear>
         </List>
       </Slide>
       <Slide transition={["fade"]} bgColor="tertiary">
-        <Heading size={2} textColor="secondary" fit>
+        <Heading size={2} textColor="quaternary" margin="0 0 36px" fit>
           { "Back to the <video> example" }
         </Heading>
           <video width="600" style={{ backgroundColor: "#000" }} controls />
       </Slide>
       <Slide transition={["fade"]} bgColor="tertiary">
-        <Heading size={2} textColor="secondary" fit>
+        <Heading size={2} textColor="quaternary" margin="0 0 36px">
           Let's fix this then...
         </Heading>
-        <CodePane lang="html" textSize="24px" source={ require("raw-loader!./examples/adding-shadow-root.example") } />
+        <CodePane lang="html" textSize="16px" source={ require("raw-loader!./examples/adding-shadow-root.example") } />
       </Slide>
       <Slide transition={["fade"]} bgColor="tertiary">
-        <Heading size={2} textColor="secondary" fit>
+        <Heading size={2} textColor="quaternary" margin="0 0 36px">
           Cool, it works!
         </Heading>
         <Appear>
@@ -174,22 +180,28 @@ export default function Presentation() {
         </Appear>
       </Slide>
       <Slide transition={["fade"]} bgColor="tertiary">
-        <Image src={images.v0support.replace("/", "")} width="100%" />
+        <Image src={images.htmlTemplatesSupport.replace("/", "")} width="100%" />
       </Slide>
       <Slide transition={["fade"]} bgColor="tertiary">
-        <Image src={images.v1support.replace("/", "")} width="100%" />
+        <Image src={images.customElementsSupport.replace("/", "")} width="100%" />
       </Slide>
       <Slide transition={["fade"]} bgColor="tertiary">
-        <Heading size={2} textColor="secondary" fit>
+        <Image src={images.htmlImports.replace("/", "")} width="100%" />
+      </Slide>
+      <Slide transition={["fade"]} bgColor="tertiary">
+        <Image src={images.shadowDom.replace("/", "")} width="100%" />
+      </Slide>
+      <Slide transition={["fade"]} bgColor="tertiary">
+        <Heading size={3} textColor="quaternary" margin="0 0 36px">
           Polyfills to the rescue!
         </Heading>
         <Image src={images.polyfillsupport.replace("/", "")} width="100%" />
       </Slide>
       <Slide transition={["fade"]} bgColor="tertiary">
-        <Heading size={2} textColor="secondary" fit>
-          Some libraries ou there
+        <Heading size={3} textColor="quaternary" margin="0 0 36px">
+          Some libraries out there
         </Heading>
-        <List>
+        <List textColor="quaternary">
           <ListItem>Polymer</ListItem>
           <ListItem>Skate.js</ListItem>
           <ListItem>X-Tag</ListItem>
@@ -197,7 +209,7 @@ export default function Presentation() {
         </List>
       </Slide>
       <Slide transition={["fade"]} bgColor="tertiary">
-        <Heading size={2} textColor="secondary" fit>
+        <Heading size={2} textColor="quaternary" fit>
           Thank you!
         </Heading>
       </Slide>

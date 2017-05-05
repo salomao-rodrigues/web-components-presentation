@@ -1,0 +1,9 @@
+<p>
+  Game tiles, Dynamic tiles<br><br>
+  Iframes
+  <ul>
+    <li>not performant</li>
+    <li>not reusable (code is not shared) - load same assets over and over</li>
+    <li>not compatible with carousel</li>
+  </ul>
+</p>

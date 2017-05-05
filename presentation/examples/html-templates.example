@@ -1,6 +1,6 @@
 <template>
   <style>
-    * { background-color: papayawhip; }
+    * { background-color: cornflowerblue; }
 
     .the-army { display: inline-block; }
   </style>

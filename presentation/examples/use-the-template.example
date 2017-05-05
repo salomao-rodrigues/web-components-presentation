@@ -1,7 +1,6 @@
 <template id="unicorn-army-template">
   ...
 </template>
-
 <script>
   const guestDoc = document.currentScript.ownerDocument;
 
